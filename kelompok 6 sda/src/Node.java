@@ -2,7 +2,7 @@
 
 public class Node {
 
-    public Node(String nama) {
+    public Node(int jumlah) {
     }
 
 }

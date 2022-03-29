@@ -12,6 +12,33 @@ import java.util.Stack;
 */
 
 public class kel6 {
+    static class Node{
+        String key;
+        Node left, right;
+
+        public Node (String string){
+            key = string;
+            left = right = null;
+        } 
+    }
+
+        Node root;
+        kel6(){
+            root = null;
+        }
+
+        void printPreorder(Node node){
+            if(node == null)
+            return;
+
+            System.out.println(node.key + " ");
+            printPreorder(node.left);
+            printPreorder(node.right);
+        }
+
+         void printPreorder(){
+            printPreorder(root);
+        }
     public static void main(String[] args) {
         //deklarasi stack beras
         Stack jumlah_karung = new Stack<String>();//var tambah stok
@@ -26,6 +53,8 @@ public class kel6 {
         ArrayList<String> riwayat_pelanggan1 = new ArrayList <String>();
         ArrayList <Integer> riwayat_beli =new ArrayList<Integer>();
         
+
+        kel6 menu = new kel6();
 
         // bikin binary tree baru
         binaryTree pencarian = new binaryTree();
@@ -47,22 +76,21 @@ public class kel6 {
         System.out.println("===================================\n");
 
         Scanner inputan = new Scanner(System.in);
-
-        
         boolean isLanjutkan = true;
 
         
 
         while (isLanjutkan) {
             System.out.println("Menu pilihan :");
-            System.out.println("1. Cek Stok Beras");
-            System.out.println("2. Tambah Stok Beras");
-            System.out.println("3. Tambah Pelanggan");
-            System.out.println("4. Tampilkan Antrian Pelanggan");
-            System.out.println("5. Proses Pembelian");
-            System.out.println("6. Riwayat Pembelian");
-            System.out.println("7. Cari Pelanggan");
-            System.out.println("8. Tutup");
+            menu.root = new Node("1. Cek Stok Beras");
+            menu.root.left = new Node ("2. Tambah Stok Beras");
+            menu.root.left.left = new Node ("3. Tambah Pelanggan");
+            menu.root.left.left.left = new Node ("4. Tampilkan Antrian Pelanggan");
+            menu.root.right = new Node("5. Proses Pembelian");
+            menu.root.right.right = new Node("6. Riwayat Pembelian");
+            menu.root.right.right.right = new Node("7. Cari Pelanggan");
+            menu.root.right.right.right.right = new Node("8. Tutup");
+            menu.printPreorder();
 
             System.out.printf("\n\nMasukkan Pilihan  : ");
             pilihan = inputan.next();
@@ -102,8 +130,7 @@ public class kel6 {
                             System.out.print("Masukkan nama : ");
                             nama = inputan.next();
                             pelanggan.add (nama);
-                            //Pencarian pelanggan
-                            pencarian.addNode(new Node(nama));
+                            
                             riwayat_pelanggan1.add(nama);
                             //System.out.println("Nama pelanggan_jumlah karung : " + nama);
                             System.out.print("jumlah karung : ");
@@ -113,6 +140,7 @@ public class kel6 {
                             for (int y=0;y < jumlah;y++){
                                 jumlah_karung.pop();
                                 }
+                                //Pencarian pelanggan
                                 
                             break;
                 
