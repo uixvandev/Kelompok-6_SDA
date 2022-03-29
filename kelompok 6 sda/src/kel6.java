@@ -32,7 +32,8 @@ public class kel6 {
 
         //deklarasi variabel lainnya
         String pilihan,nama;
-        int jumlah,nama1;
+        int jumlah;
+        String nama1;
 
         //array beras
         
@@ -133,10 +134,11 @@ public class kel6 {
                 case "7" :
                             
                             System.out.println("Data yang akan anda cari : ");
-                            nama1 = inputan.nextInt();
+                            nama1 = inputan.nextLine();
                             System.out.println("Hasil pencarian : " + binaryTree.searchValue(pencarian.root,nama1));
                             break;
-            
+                case "8" :
+                            System.exit(0);
                 default:
                     break;
                 
