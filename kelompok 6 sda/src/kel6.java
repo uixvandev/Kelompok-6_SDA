@@ -15,30 +15,24 @@ public class kel6 {
     public static void main(String[] args) {
         //deklarasi stack beras
         Stack jumlah_karung = new Stack<String>();//var tambah stok
-        // Stack <Integer> solok = new Stack<Integer>();
-        // Stack <Integer> cisokan = new Stack<Integer>();
+        
 
         //deklarasi qeueu antrian
         Queue <String> pelanggan = new LinkedList<>();
         ArrayList<Integer> jumlah_karung1 = new ArrayList<Integer>();
-        // deklarasi array antrian -> untuk memasukan data no antrian yang sudah
-        // diproses
-        int no_antrian[] = new int[100];
-
-        // deklarasi array jenis beras
-        String jenis[] = new String[2];
+        
 
         // deklarasi riwayat
         ArrayList<String> riwayat_pelanggan1 = new ArrayList <String>();
         ArrayList <Integer> riwayat_beli =new ArrayList<Integer>();
-        //String riwayat_cisokan[] = new String[10];
+        
 
         // bikin binary tree baru
         binaryTree pencarian = new binaryTree();
 
         //deklarasi variabel lainnya
         String pilihan,nama;
-        int harga1,harga2,jumlah;
+        int jumlah,nama1;
 
         //array beras
         
@@ -107,6 +101,8 @@ public class kel6 {
                             System.out.print("Masukkan nama : ");
                             nama = inputan.next();
                             pelanggan.add (nama);
+                            //Pencarian pelanggan
+                            pencarian.addNode(new Node(nama));
                             riwayat_pelanggan1.add(nama);
                             //System.out.println("Nama pelanggan_jumlah karung : " + nama);
                             System.out.print("jumlah karung : ");
@@ -116,6 +112,7 @@ public class kel6 {
                             for (int y=0;y < jumlah;y++){
                                 jumlah_karung.pop();
                                 }
+                                
                             break;
                 
                 case "4" :
@@ -126,16 +123,19 @@ public class kel6 {
                             //Proses pembelian (Queue)
                             System.out.println("Pembelian atas nama : " + pelanggan.poll());
                             
+                            break;
 
                 case "6" :
                             //Riwayat pelanggan
                             System.out.println(riwayat_pelanggan1);
                             System.out.println(riwayat_beli);
+                            break;
                 case "7" :
-                            //Pencarian pelanggan
                             
-                            
-
+                            System.out.println("Data yang akan anda cari : ");
+                            nama1 = inputan.nextInt();
+                            System.out.println("Hasil pencarian : " + binaryTree.searchValue(pencarian.root,nama1));
+                            break;
             
                 default:
                     break;
