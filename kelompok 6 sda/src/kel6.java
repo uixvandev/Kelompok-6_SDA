@@ -134,7 +134,7 @@ public class kel6 {
                 case "7" :
                             
                             System.out.println("Data yang akan anda cari : ");
-                            nama1 = inputan.nextLine();
+                            nama1 = inputan.next();
                             System.out.println("Hasil pencarian : " + binaryTree.searchValue(pencarian.root,nama1));
                             break;
                 case "8" :
