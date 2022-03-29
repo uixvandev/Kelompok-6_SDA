@@ -88,8 +88,8 @@ public class kel6 {
             menu.root.left.left.left = new Node ("4. Tampilkan Antrian Pelanggan");
             menu.root.right = new Node("5. Proses Pembelian");
             menu.root.right.right = new Node("6. Riwayat Pembelian");
-            menu.root.right.right.right = new Node("7. Cari Pelanggan");
-            menu.root.right.right.right.right = new Node("8. Tutup");
+            menu.root.right.right.right = new Node("7. Tutup");
+        
             menu.printPreorder();
 
             System.out.printf("\n\nMasukkan Pilihan  : ");
@@ -160,13 +160,8 @@ public class kel6 {
                             System.out.println(riwayat_beli);
                             break;
                 case "7" :
-                            
-                            System.out.println("Data yang akan anda cari : ");
-                            nama1 = inputan.next();
-                            System.out.println("Hasil pencarian : " + binaryTree.searchValue(pencarian.root,nama1));
-                            break;
-                case "8" :
-                            System.exit(0);
+                    System.exit(0);
+                
                 default:
                     break;
                 
