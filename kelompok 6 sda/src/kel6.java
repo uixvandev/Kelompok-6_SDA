@@ -14,13 +14,13 @@ import java.util.Stack;
 public class kel6 {
     public static void main(String[] args) {
         //deklarasi stack beras
-        Stack <Integer> solok = new Stack<Integer>();
-        Stack <Integer> cisokan = new Stack<Integer>();
+        Stack jumlah_karung = new Stack<String>();//var tambah stok
+        // Stack <Integer> solok = new Stack<Integer>();
+        // Stack <Integer> cisokan = new Stack<Integer>();
 
         //deklarasi qeueu antrian
         Queue <String> pelanggan = new LinkedList<>();
-        Queue <String> jumlah_karung = new LinkedList<>();
-
+        ArrayList<Integer> jumlah_karung1 = new ArrayList<Integer>();
         // deklarasi array antrian -> untuk memasukan data no antrian yang sudah
         // diproses
         int no_antrian[] = new int[100];
@@ -30,15 +30,15 @@ public class kel6 {
 
         // deklarasi riwayat
         ArrayList<String> riwayat_pelanggan1 = new ArrayList <String>();
-        String riwayat_pelanggan[] = new String[10];
+        ArrayList <Integer> riwayat_beli =new ArrayList<Integer>();
         //String riwayat_cisokan[] = new String[10];
 
         // bikin binary tree baru
         binaryTree pencarian = new binaryTree();
 
         //deklarasi variabel lainnya
-        String pilihan,nama,jumlah;
-        int harga1,harga2;
+        String pilihan,nama;
+        int harga1,harga2,jumlah;
 
         //array beras
         
@@ -76,7 +76,7 @@ public class kel6 {
             switch (pilihan) {
                 case "1" :
                             System.out.println("Cek Stok Beras");
-                            System.out.println("Stok beras Solok: " + jumlah_karung);
+                            System.out.println("Stok beras Solok: " + jumlah_karung.size());
                             // System.out.println("Stok beras Solok: " + cisokan);
                             // System.out.println("\n\n");
 
@@ -84,14 +84,17 @@ public class kel6 {
                 
                 case "2" :
                             // stack
-                            for (int i = 1; i <= 1;i++){
-                            solok.push(i);}
-                            System.out.println("Beras solok : ");
-                            System.out.println(solok);
-                            for (int j = 1; j <= 1;j++) {
-                            cisokan.push(j);}
-                            System.out.println("Beras cisokan : ");
-                            System.out.println(cisokan);
+                            System.out.print("Masukkan Jumlah Stok : ");
+                            int stokBeras = inputan.nextInt();
+                            for (int x = 0; x < stokBeras; x++){
+                                jumlah_karung.push("1");   
+                            }
+                            // System.out.println("Beras solok : ");
+                            // System.out.println(jumlah_karung);
+                            // for (int j = 1; j <= 1;j++) {
+                            // cisokan.push(j);}
+                            // System.out.println("Beras cisokan : ");
+                            // System.out.println(cisokan);
 
                             System.out.println("Banyak karung Beras Solok : " + jumlah_karung.size());
                             // System.out.println("Banyak karung Beras Solok : " + cisokan.size());
@@ -107,9 +110,12 @@ public class kel6 {
                             riwayat_pelanggan1.add(nama);
                             //System.out.println("Nama pelanggan_jumlah karung : " + nama);
                             System.out.print("jumlah karung : ");
-                            jumlah = inputan.next();
-                            jumlah_karung.add (jumlah);
-
+                            jumlah = inputan.nextInt();
+                            jumlah_karung1.add (jumlah);
+                            riwayat_beli.add(jumlah);
+                            for (int y=0;y < jumlah;y++){
+                                jumlah_karung.pop();
+                                }
                             break;
                 
                 case "4" :
@@ -119,11 +125,12 @@ public class kel6 {
                 case "5" :
                             //Proses pembelian (Queue)
                             System.out.println("Pembelian atas nama : " + pelanggan.poll());
-                            jumlah_karung.poll();
+                            
 
                 case "6" :
                             //Riwayat pelanggan
                             System.out.println(riwayat_pelanggan1);
+                            System.out.println(riwayat_beli);
                 case "7" :
                             //Pencarian pelanggan
                             
