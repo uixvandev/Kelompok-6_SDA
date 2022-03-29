@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -28,6 +29,7 @@ public class kel6 {
         String jenis[] = new String[2];
 
         // deklarasi riwayat
+        ArrayList<String> riwayat_pelanggan1 = new ArrayList <String>();
         String riwayat_pelanggan[] = new String[10];
         //String riwayat_cisokan[] = new String[10];
 
@@ -102,6 +104,7 @@ public class kel6 {
                             System.out.print("Masukkan nama : ");
                             nama = inputan.next();
                             pelanggan.add (nama);
+                            riwayat_pelanggan1.add(nama);
                             //System.out.println("Nama pelanggan_jumlah karung : " + nama);
                             System.out.print("jumlah karung : ");
                             jumlah = inputan.next();
@@ -120,10 +123,10 @@ public class kel6 {
 
                 case "6" :
                             //Riwayat pelanggan
-                            System.out.println(riwayat_pelanggan);
+                            System.out.println(riwayat_pelanggan1);
                 case "7" :
                             //Pencarian pelanggan
-
+                            
                             
 
             
