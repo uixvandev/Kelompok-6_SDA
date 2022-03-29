@@ -56,13 +56,11 @@ public class kel6 {
 
         kel6 menu = new kel6();
 
-        // bikin binary tree baru
-        binaryTree pencarian = new binaryTree();
+        
 
         //deklarasi variabel lainnya
         String pilihan,nama;
         int jumlah;
-        String nama1;
 
         //array beras
         
@@ -100,9 +98,7 @@ public class kel6 {
                 case "1" :
                             System.out.println("Cek Stok Beras");
                             System.out.println("Stok beras Solok: " + jumlah_karung.size());
-                            // System.out.println("Stok beras Solok: " + cisokan);
-                            // System.out.println("\n\n");
-
+                            
                     break;
                 
                 case "2" :
@@ -112,16 +108,9 @@ public class kel6 {
                             for (int x = 0; x < stokBeras; x++){
                                 jumlah_karung.push("1");   
                             }
-                            // System.out.println("Beras solok : ");
-                            // System.out.println(jumlah_karung);
-                            // for (int j = 1; j <= 1;j++) {
-                            // cisokan.push(j);}
-                            // System.out.println("Beras cisokan : ");
-                            // System.out.println(cisokan);
+
 
                             System.out.println("Banyak karung Beras Solok : " + jumlah_karung.size());
-                            // System.out.println("Banyak karung Beras Solok : " + cisokan.size());
-
                             break;
                             
                 
