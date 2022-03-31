@@ -50,7 +50,7 @@ public class kel6 {
         
 
         // deklarasi riwayat
-        ArrayList<String> riwayat_pelanggan1 = new ArrayList <String>();
+        LinkedList <String> riwayat_pelanggan1 = new LinkedList<String>();
         ArrayList <Integer> riwayat_beli =new ArrayList<Integer>();
         
 
